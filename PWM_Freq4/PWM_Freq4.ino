@@ -3,16 +3,18 @@
 // VLO 2013-2014
 //****************************************************************************************
 
-
+const int LedRouge = 2;
+const int LedOrange = 4;
+const int LedVerte = 6;
 const int outPin = 9; // output pin
 const float maxFreq = 16000000; //max freq supported by Arduino (16MHz)
 
 void setup()
 {
 
-  pinMode(2, OUTPUT);
-  pinMode(4, OUTPUT);
-  pinMode(6, OUTPUT);
+  pinMode(LedRouge, OUTPUT);
+  pinMode(LedOrange, OUTPUT);
+  pinMode(LedVerte, OUTPUT);
   Serial.begin(115200); //for sending A0 pin values
   
   pinMode(outPin,OUTPUT);        //Signal generator pin
@@ -36,30 +38,30 @@ void loop()
 
   if (val > 410)
   {
-    digitalWrite(2,HIGH);
-    digitalWrite(4,LOW);
-    digitalWrite(6,LOW);
+    digitalWrite(LedRouge,HIGH);
+    digitalWrite(LedOrange,LOW);
+    digitalWrite(LedVerte,LOW);
   }
 
   else if (val > 380)
   {
-    digitalWrite(2, LOW);
-    digitalWrite(4, HIGH);
-    digitalWrite(6, LOW);
+    digitalWrite(LedRouge, LOW);
+    digitalWrite(LedOrange, HIGH);
+    digitalWrite(LedVerte, LOW);
   }
 
   else if (val > 365)
   {
-    digitalWrite(2, LOW);
-    digitalWrite(4, LOW);
-    digitalWrite(6, HIGH);
+    digitalWrite(LedRouge, LOW);
+    digitalWrite(LedOrange, LOW);
+    digitalWrite(LedVerte, HIGH);
   }
 
   else if (val > 350)
   {
-    digitalWrite(2, HIGH);
-    digitalWrite(4, HIGH);
-    digitalWrite(6, HIGH);
+    digitalWrite(LedRouge, HIGH);
+    digitalWrite(LedOrange, HIGH);
+    digitalWrite(LedVerte, HIGH);
   }
   
 }
