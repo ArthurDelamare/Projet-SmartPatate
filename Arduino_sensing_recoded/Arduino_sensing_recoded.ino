@@ -77,8 +77,11 @@ void loop()
   }
   delay(10000);
 
-
-  PlottArray(1, freq, results); 
+  for(unsigned int d=0; d<N; d++)
+  {
+    Serial.println(results[d]);
+  }
+  //PlottArray(1, freq, results); 
  
 
   TOG(PORTB,0);            //-Toggle pin 8 after each sweep (good for scope)
